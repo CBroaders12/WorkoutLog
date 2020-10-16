@@ -1,8 +1,22 @@
 const Express = require('express');
 const app = Express();
+const port = 9150;
 
-app.get('/', (request, response) => {
-  response.send('You have the root route working!')
-})
+const workoutlogDatabaseObject = require('./db');
 
-app.listen(9150, () => console.log('[server]: Listening on Port 9150'))
+// Import Controllers
+const { logs, users } = require('./controllers/index');
+
+// Setup routes to controllers
+app.use('/users', users);
+app.use('/logs', logs);
+
+workoutlogDatabaseObject
+  .authenticate()
+  .then(() => workoutlogDatabaseObject.sync())
+  .then(() => {
+    app.listen(port, () => {
+      console.log(`[server]: Listening on http://localhost:${port}`)
+    });
+  })
+  .catch(error => console.log(error));
