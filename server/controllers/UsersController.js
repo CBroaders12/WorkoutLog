@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const UsersControllerRouter = Router();
-const { user } = require('../models/index');
+const User = require('../models/index').user;
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
@@ -10,11 +10,30 @@ UsersControllerRouter.get('/test', (request, response) => {
 
 /*******************************
  * TODO: POST request: /register
- * Allows a new user to be created with a username and password.
+ * Allows a new user to be created with an email and password.
 ********************************/
 UsersControllerRouter.post('/register', (request, response) => {
-  response.send("You have found the register route")
-})
+  let email = request.body.email;
+  let password = request.body.password;
+
+  User
+    .create({
+      email: email,
+      passwordhash: bcrypt.hashSync(password, 12)
+    })
+    .then( 
+      user => {
+        let token = jwt.sign({id: user.id}, process.env.JWT_SECRET, {expiresIn: 60*60*24});
+
+        response.json({
+          user: user,
+          message: 'created',
+          sessionToken: token
+        });
+      },
+      error => response.status(500).send(error.message)
+    );
+});
 
 /*******************************
  * TODO: POST request: /login
