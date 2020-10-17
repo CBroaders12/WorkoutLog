@@ -3,7 +3,7 @@ const Sequelize = require('sequelize');
 const workoutSequelizeObject = new Sequelize(
   'workoutlogdb',
   'conorbroaders',
-  'GiveMeSecurity12',
+  process.env.postgres_password,
   {
     host: 'localhost',
     dialect: 'postgres'

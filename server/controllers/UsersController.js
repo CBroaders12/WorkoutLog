@@ -1,6 +1,8 @@
-const { Router, response } = require('express');
-
+const { Router } = require('express');
 const UsersControllerRouter = Router();
+const { user } = require('../models/index');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
 UsersControllerRouter.get('/test', (request, response) => {
   response.send("Hello from the users controller!")

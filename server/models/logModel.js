@@ -1,5 +1,3 @@
-const { DataTypes } = require("sequelize/types");
-
 const { DataTypes } = require('sequelize');
 const workoutlogDatabaseObject = require('../db');
 
