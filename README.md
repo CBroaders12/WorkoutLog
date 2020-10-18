@@ -22,3 +22,14 @@ This is my first server based application! I am building as a part of Eleven Fif
 
 - **Incorrect Email Address**
   ![postman user/login wrong email](./testImages/postmanUserLoginWrongEmail.png)
+
+### logs/log POST request
+
+- **Create a log entry for a logged in user**
+  ![postman logs/log POST success](./testImages/postmanLogCreateSuccess.png)
+  ![postgres logs/log POST result](./testImages/postgresLogCreateResult.png)
+
+### logs/log GET request
+
+- **Get all logs for a logged in user**
+  ![postman logs/log GET success](./testImages/postmanLogGetAllSuccess.png)

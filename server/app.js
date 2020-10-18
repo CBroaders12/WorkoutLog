@@ -13,7 +13,11 @@ const { logs, users } = require('./controllers/index');
 app.use(Express.json())
 
 // Controller Routes
+//~  OPEN ROUTES
 app.use('/users', users);
+
+//~ AUTHENTICATED ROUTES
+app.use(require('./middleware/validate-session')); // Only validated users can create logs
 app.use('/logs', logs);
 
 // Sync to database and start listening
