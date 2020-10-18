@@ -43,8 +43,11 @@ This is my first server based application! I am building as a part of Eleven Fif
 
 - **Update a specified log for a logged in user**
   ![postman log/:id PUT success](./testImages/postmanLogUpdateSuccess.png)
-  ![postgres log/:id before update](./testImages/postgresBeforeUpdate.png)
-  ![postgres log/:id after update](./testImages/postgresAfterUpdate.png)
+
+  - _Before updating table_
+    ![postgres log/:id before update](./testImages/postgresBeforeUpdate.png)
+  - _After updating table_
+    ![postgres log/:id after update](./testImages/postgresAfterUpdate.png)
 
 ### log/:id DELETE request
 
