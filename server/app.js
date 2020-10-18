@@ -14,11 +14,11 @@ app.use(Express.json())
 
 // Controller Routes
 //~  OPEN ROUTES
-app.use('/users', users);
+app.use('/user', users);
 
 //~ AUTHENTICATED ROUTES
 app.use(require('./middleware/validate-session')); // Only validated users can create logs
-app.use('/logs', logs);
+app.use('/log', logs);
 
 // Sync to database and start listening
 workoutlogDatabaseObject

@@ -6,13 +6,13 @@ This is my first server based application! I am building as a part of Eleven Fif
 
 ## ENDPOINT TESTING
 
-### users/register POST request
+### user/register POST request
 
 - **Register a new user**
   ![postman user/register test](./testImages/postmanUserRegisterTest.png)
   ![postgres user/register result](./testImages/postgresRegisterUserResult.png)
 
-### users/login POST request
+### user/login POST request
 
 - **Successful Login**
   ![postman user/login success](./testImages/postmanUserLoginSuccess.png)
@@ -23,13 +23,31 @@ This is my first server based application! I am building as a part of Eleven Fif
 - **Incorrect Email Address**
   ![postman user/login wrong email](./testImages/postmanUserLoginWrongEmail.png)
 
-### logs/log POST request
+### log/ POST request
 
 - **Create a log entry for a logged in user**
-  ![postman logs/log POST success](./testImages/postmanLogCreateSuccess.png)
-  ![postgres logs/log POST result](./testImages/postgresLogCreateResult.png)
+  ![postman log POST success](./testImages/postmanLogCreateSuccess.png)
+  ![postgres log POST result](./testImages/postgresLogCreateResult.png)
 
-### logs/log GET request
+### log/ GET request
 
 - **Get all logs for a logged in user**
-  ![postman logs/log GET success](./testImages/postmanLogGetAllSuccess.png)
+  ![postman log GET success](./testImages/postmanLogGetAllSuccess.png)
+
+### log/:id GET request
+
+- **Get a single log for a signed in user**
+  ![postman logs/log GET success](./testImages/postmanLogGetSingleSuccess.png)
+
+### log/:id PUT request
+
+- **Update a specified log for a logged in user**
+  ![postman log/:id PUT success](./testImages/postmanLogUpdateSuccess.png)
+  ![postgres log/:id before update](./testImages/postgresBeforeUpdate.png)
+  ![postgres log/:id after update](./testImages/postgresAfterUpdate.png)
+
+### log/:id DELETE request
+
+- **Delete a specified log for a logged in user**
+  ![postman log/:id DELETE success](./testImages/postmanLogDeleteSuccess.png)
+  ![postgres log/:id after deletion](./testImages/postgresAfterDelete.png)
