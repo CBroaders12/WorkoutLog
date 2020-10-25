@@ -9,8 +9,11 @@ const workoutlogDatabaseObject = require('./db');
 // Import Controllers
 const { logs, users } = require('./controllers/index');
 
+// CORS
+app.use(require('./middleware/corsMiddleware'));
+
 // Middleware
-app.use(Express.json())
+app.use(Express.json());
 
 // Controller Routes
 //~  OPEN ROUTES
